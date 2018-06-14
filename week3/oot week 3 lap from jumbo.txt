@@ -1,0 +1,147 @@
+1.
+Running
+8
+45 9
+38 11 2
+5
+------------
+
+package comeng.sut;
+import java.util.*;
+public class Sample {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        
+        sumUntilOneDigit(521);
+        sumUntilOneDigit(123456789);
+        sumUntilOneDigit(99992);
+        sumUntilOneDigit(5);
+    }
+    public static void sumUntilOneDigit(int num){
+        int sum=0;
+        
+        do{
+            sum = sumDigit(num);
+            System.out.println(sum + " ");
+            num = sum;
+          }while(num > 9);
+            System.out.println();
+      
+        
+                
+    }
+    public static int sumDigit(int num){
+         int sum=0;
+        while(num > 0){
+        sum += num%10;
+        
+        num /=10;
+        }
+        return sum;
+    }
+    
+}
+
+**************************************************************
+2.
+Running
+Enter a number <5-9> :8
+Enter a number <5-9> :3
+Enter a number <5-9> :5
++++++
++* *+
++ * +
++* *+
+---------------
+package comeng.sut;
+import java.util.*;
+public class Sample {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int num;
+        do{
+            System.out.print("Enter a number <5-9> :");
+            num = sc.nextInt();
+            
+        }while(!isOdd(num) || !isRange(num));
+        drawBlock(num);
+    
+    
+}
+        public static boolean isOdd(int num){
+            return num%2 == 1;
+            
+            
+        }
+        public static boolean isRange(int num){
+            return num >=5 && num <=9;
+            
+            
+                
+        }
+        public static void drawBlock(int num){
+            for(int i=1;i<=num;i++){
+                for(int j =1;j <=num ;j++){
+                    if(i==1 || i == num || j == 1 || j == num)
+                        System.out.print("+");
+                    else if(i==j || i+j == num+1)
+                        System.out.print("*");
+                    else
+                        System.out.print(" ");
+            }
+                System.out.println();
+            }
+        }
+}
+***********************************************
+3.
+Running
+842
+800
+20
+---------------
+package comeng.sut;
+import java.util.*;
+public class Sample {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        
+        createEvenNumber(13842);
+        createEvenNumber(58900);
+        createEvenNumber(3210);
+       
+        }
+    public static void createEvenNumber(int num){
+        int sum1,sum2,digit1,digit2;
+        
+        sum1 = reverseEven(num);
+        digit1 = countEven(num);
+        sum2 = reverseEven(sum1);
+        digit2 = countEven(sum1);
+        for(int i =1;i<= digit1-digit2;i++)
+            sum2 *= 10;
+        System.out.println(sum2);
+    }
+    public static int reverseEven(int num){
+        int rev = 0, d;
+        
+        while(num > 0){
+            d = num %10;
+            if(d %2 == 0)
+                rev =rev*10 +d;
+            num /=10;
+        }
+        return rev;
+    }
+    public static int countEven(int num){
+        int count = 0,d;
+        
+        while(num >0){
+            d= num%10;
+            if(d%2 ==0)
+                count++;
+            num /=10;
+        }
+        return count;
+    }
+}

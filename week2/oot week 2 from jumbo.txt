@@ -1,0 +1,404 @@
+There are 2 types of control statements
+ 1. Selection statement
+ 2. Repetition statement
+
+Running 
+Enter your grade <A-F> :A
+excellent
+
+Input			Output
+B			good
+C			fair
+D			poor
+-------------------------------------
+Exsample
+
+
+package comeng.sut;
+import java.util.*;
+public class Sample {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+         char grade;
+         
+         System.out.println("Enter your grad <A-F> : ");
+         grade = sc.next().charAt(grade);
+         if(grade == 'A')
+             System.out.println("excellent");
+         else if(grade == 'B')
+             System.out.println("good");
+         else if(grade == 'C')
+             System.out.println("fair");
+         else if(grade == 'D')
+             System.out.println("poor");
+         else 
+             System.out.println("fail");
+    }
+    
+}
+-----------------------------------------
+package comeng.sut;
+import java.util.*;
+public class Sample {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+         char grade;
+         
+         System.out.println("Enter your grade <A-F> :");
+         grade = sc.next().charAt(0);
+         
+        switch(grade){
+            case 'A':System.out.println("excellent");break;
+            case 'B':System.out.println("good");break;
+            case 'C':System.out.println("fair");break;
+            case 'D':System.out.println("poor");break;
+            case 'F':System.out.println("fail");break;
+            default :System.out.println("unknow"); 
+        }
+    }
+    
+}
+****************************************************
+Test[Selection statement]
+
+1.
+package comeng.sut;
+import java.util.*;
+public class Sample {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+         int num;
+         
+         System.out.print("Enter a number :");
+         num = sc.nextInt();
+         
+        switch(num%2){
+            case 0:System.out.println("even");break;
+            case 1:System.out.println("odd");break;
+           
+            default :System.out.println(""); 
+        }
+    }
+    
+}
+*****************************************************
+2.
+Running
+Enter a charecter <a-z> :m
+consonant
+
+Enter a charecter <a-z> :u
+vowel
+
+Enter a charecter <a-z> :e
+vowel
+
+Enter a charecter <a-z> :b
+consonant
+---------------------------
+package comeng.sut;
+import java.util.*;
+public class Sample {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+         char ch;
+         
+         System.out.print("Enter a charecter <a-z> :");
+         ch = sc.next().charAt(0);
+         
+        switch(ch){
+            case 'a':
+            case 'e':
+            case 'i':
+            case 'o':
+            case 'u':System.out.println("vowel");break;
+           
+            default :System.out.println("consonant");break; 
+        }
+    }
+    
+}
+
+********************************************************
+Test[Repression statement]
+
+1.Running 
+Enter an even number :3
+Enter an even number :5
+Enter an even number :10
+10 is ok 
+
+---------------------------------
+package comeng.sut;
+import java.util.*;
+public class Sample {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+         int num;
+         do{
+         System.out.print("Enter an even number :");
+         num = sc.nextInt();
+             
+         }while(num%2 != 0);
+         System.out.println(num + "is ok");
+        
+        
+    }
+    
+}
+
+***************************************************
+2. find the revers of a number
+Running 
+Enter a number :2825
+5285 
+--------------------------------------------
+package comeng.sut;
+import java.util.*;
+public class Sample {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+         int num,rev = 0;
+         
+       
+             System.out.print("Enter a number :");
+             num = sc.nextInt();
+         while(num > 0){
+            rev = rev*10 + num%10;
+            num /=10;
+    }
+         System.out.println(rev);
+        
+    }
+   
+    
+}
+***************************************************
+3. Palindrome
+package comeng.sut;
+import java.util.*;
+public class Sample {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+         int num,rev = 0,temp;
+         
+       
+             System.out.print("Enter a number :");
+             num = sc.nextInt();
+             temp = num;
+         while(num > 0){
+            rev = rev*10 + num%10;
+            num /=10;
+    }
+         System.out.println(rev);
+        if(rev == temp)
+            System.out.println("palindrome");
+        else
+            System.out.println("not palindrome");
+    }
+   
+    
+}
+
+*********************************************************
+sum
+1.
+Enter a number :123
+6
+
+package comeng.sut;
+import java.util.*;
+public class Sample {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+         int num,sum = 0;
+         
+       
+             System.out.print("Enter a number :");
+             num = sc.nextInt();
+             
+         while(num > 0){
+           sum += num%10;
+           num /=10;
+    }
+        System.out.println(sum);
+    } 
+}
+
+***************************************************************
+2.
+Enter a number :1223
+4
+-------------------------------------
+package comeng.sut;
+import java.util.*;
+public class Sample {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+         int num,sum = 0,d;
+         
+       
+             System.out.print("Enter a number :");
+             num = sc.nextInt();
+             
+         while(num > 0){
+           d = num % 10; 
+           if(d % 2 ==0)
+           sum += d;
+           
+               
+           num /=10;
+    }
+        System.out.println(sum);
+    } 
+}
+***********************************************************************
+binary
+1.
+Running
+Enter a binary number :1101
+binary 1101 = decimal 13
+--------------------------------------------------
+package comeng.sut;
+import java.util.*;
+public class Sample {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+         int binary,decimal = 0,d,weight = 1,temp;
+         
+       
+             System.out.print("Enter a number :");
+             binary = sc.nextInt();
+             temp = binary;
+             
+             while(binary > 0){
+                 d = binary % 10;
+                 decimal = decimal + d*weight;
+                 weight *= 2;
+                 binary /= 10;
+                 
+             }
+             System.out.println("binary " + " " + temp + " " + " = deciaml" + " " + decimal);
+        
+    } 
+}
+*************************************
+2.
+Running
+Enter a decimal number :13
+decimal 13 = binary 1101
+
+package comeng.sut;
+import java.util.*;
+public class Sample {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+         int binary = 0,decimal,d,weight = 1,temp;
+         
+       
+             System.out.print("Enter a decimal number :");
+             decimal = sc.nextInt();
+             temp = decimal;
+             
+             while(decimal > 0){
+                 d = decimal % 2;
+                 binary = binary + d*weight;
+                 weight *= 10;
+                 decimal /= 2;
+                 
+             }
+             System.out.println("decimal " + " " + temp + " " + " = binary" + " " + binary);
+        
+    } 
+}
+
+**********************************************
+Runing
+1.
+Enter a number :10
+1 2 3 4 5 6 7 8 9 10
+------------------------
+package comeng.sut;
+import java.util.*;
+public class Sample {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+         int num;
+         
+       
+             System.out.print("Enter a  number :");
+             num = sc.nextInt();
+             
+             for(int i =1;i <=num ;i++)
+             System.out.print(i + " ");
+        
+    } 
+}
+
+**********************************************
+2.
+Enter a number :5
+*
+**
+***
+****
+*****
+------------------
+package comeng.sut;
+import java.util.*;
+public class Sample {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+         int num;
+         
+       
+             System.out.print("Enter a  number :");
+             num = sc.nextInt();
+             
+             for(int i =1;i <=num ;i++){
+                 for(int j = 1;j <=i;j++){
+                     System.out.print("*");
+                 }
+                 System.out.println();
+             
+             }
+                 
+            
+        
+    } 
+}
+***********************************************
+3.
+Enter a  number :5
+....*
+...**
+..***
+.****
+*****
+------------------------
+package comeng.sut;
+import java.util.*;
+public class Sample {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+         int num;
+         
+       
+             System.out.print("Enter a  number :");
+             num = sc.nextInt();
+             
+             for(int i =1;i <=num ;i++){
+                 for(int j = 1;j <=num-i;j++){
+                     System.out.print(".");
+                 }
+                 for(int j = 1; j<=i;j++){
+                     System.out.print("*");
+                 }
+                 System.out.println();
+             
+             }
+                 
+            
+        
+    } 
+}
